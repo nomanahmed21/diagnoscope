@@ -1,0 +1,183 @@
+:root {
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e6e6e6;
+  --hover-bg: #f0f4ff;
+  --active-bg: #e0ebff;
+  --primary: #0f65f9;
+  --text-color: #222;
+  --gray: #6b7280;
+  --content-bg: #f9f9fb;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--content-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  transition: width var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 0;
+}
+
+.sidebar.closed {
+  width: 72px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.logo-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.logo-container.hovered {
+  background-color: rgba(15, 163, 249, 0.1); /* Light hover effect */
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom right, #0FA3F9, #0F65F9, #0FEEF9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+  padding: 4px;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  cursor: pointer;
+  color: var(--gray);
+  transition: background var(--transition), color var(--transition);
+}
+
+.menu-item:hover {
+  background-color: var(--hover-bg);
+  color: var(--primary);
+}
+
+.menu-item.active {
+  background-color: var(--active-bg);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Bottom profile */
+.profile-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--sidebar-border);
+}
+
+.avatar {
+  background-color: var(--primary);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to bottom right, #0FA3F9, #0F65F9, #0FEEF9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hide labels when collapsed */
+.sidebar.closed .label,
+.sidebar.closed .name {
+  display: none;
+}
+
+/* Content */
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background: var(--content-bg);
+  color: var(--text-color);
+  overflow-y: auto;
+}

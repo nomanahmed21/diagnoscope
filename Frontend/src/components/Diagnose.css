@@ -1,0 +1,153 @@
+/* Scoped styles for Diagnoscope Diagnose component */
+.diagnose-container {
+  flex: 1;
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Branding header */
+.diagnose-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.diagnoscope-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(to bottom right, #0FA3F9, #0F65F9, #0FEEF9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.typed-text {
+  font-size: 1.6rem;
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* Model grid */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Model card styling */
+.model-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.model-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.model-card h2 {
+  color: #0F65F9;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.model-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.8rem 0 1.2rem;
+}
+
+/* Predict button */
+.predict-btn {
+  background: linear-gradient(to right, #0FA3F9, #0F65F9);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.predict-btn:hover {
+  background: linear-gradient(to right, #0F65F9, #0FA3F9);
+  transform: translateY(-2px);
+}
+
+.predict-btn:active {
+  transform: translateY(0);
+}
+
+/* Form section */
+.form_section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background: #3498db;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.back-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .diagnose-container {
+    padding: 1rem;
+  }
+
+  .diagnoscope-title {
+    font-size: 2rem;
+  }
+
+  .typed-text {
+    font-size: 1.2rem;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility enhancements */
+.predict-btn:focus,
+.back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}

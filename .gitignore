@@ -1,0 +1,59 @@
+# Node.js (frontend + backend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React build
+/frontend/build/
+/frontend/dist/
+/frontend/.cache
+
+# Backend build / transpile output
+/backend/dist/
+/backend/build/
+/backend/node_modules/
+
+# MongoDB local dumps
+*.mongodb
+*.bson
+*.mongodump
+dump/
+
+# Python (Flask, ML models)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+
+# Environment & Config
+*.env
+*.env.local
+*.env.production
+*.env.development
+config.json
+
+# ML Models (don’t push to GitHub)
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

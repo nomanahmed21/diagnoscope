@@ -1,0 +1,169 @@
+.reports-container {
+    padding: 20px;
+    background: #f5f7fa;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.report-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.report-test {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.report-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.report-result {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.positive {
+    color: #d63031;
+}
+
+.negative {
+    color: #27ae60;
+}
+
+.card-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.view-btn {
+    background: #555;
+    color: white;
+}
+
+.view-btn:hover {
+    background: #333;
+}
+
+.download-btn {
+    background: #2980b9;
+    color: white;
+}
+
+.download-btn:hover {
+    background: #1f6391;
+}
+
+.close-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.close-btn:hover {
+    background: #c0392b;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.modal-box {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 10;
+    animation: fadeIn 0.25s ease-out;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+.section-title {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+.symptoms-list {
+    margin-top: 6px;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+.modal-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

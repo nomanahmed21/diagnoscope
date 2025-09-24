@@ -1,0 +1,66 @@
+.analytics-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+}
+
+.analytics-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.dropdown-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dropdown-label {
+  font-size: 16px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.dropdown {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.dropdown:hover {
+  border-color: #8884d8;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+ .refresh-button {
+  margin-left: 15px;
+  padding: 8px 16px;
+  font-size: 15px;
+  background-color: #8884d8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.refresh-button:hover {
+  background-color: #6b5cc4;
+}
