@@ -3,13 +3,13 @@ import {
   ActivitySquare,
   BarChart3,
   FileText,
-  Settings,
+  Brain,
   LogOut
 } from "lucide-react";
 import "./UserPage.css";
 import Diagnose from "./Diagnose";
 import Analytics from "./Analytics";
-import SettingsPage from "./SettingsPage";
+import SettingsPage from "./ChatUI";
 import Reports from "./Reports";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, clearUser } from "../store/userSlice";
@@ -25,7 +25,7 @@ const UserPage = () => {
     { label: "Diagnose", icon: <ActivitySquare size={20} /> },
     { label: "Analytics", icon: <BarChart3 size={20} /> },
     { label: "Reports", icon: <FileText size={20} /> },
-    { label: "Settings", icon: <Settings size={20} /> },
+    { label: "AI", icon: <Brain size={20} /> },
     { label: "Logout", icon: <LogOut size={20} /> }
   ];
 

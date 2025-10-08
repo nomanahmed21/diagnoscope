@@ -9,6 +9,8 @@ import uuid
 from datetime import datetime
 from dotenv import load_dotenv
 import os
+from utils.api import create_embeddings, inference
+from utils.search import SearchEngine
 
 load_dotenv()
 
@@ -21,6 +23,9 @@ reports = db["reports"]
 
 diabetes_model = keras.models.load_model("./Model/diabetes_model.keras")
 diabetes_pipeline = joblib.load("./Model/diabetes_pipeline.pkl")
+
+df = joblib.load("data_embeddings.joblib")
+search_engine = SearchEngine(df)
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -69,6 +74,40 @@ def Predict():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+    
+@app.route("/api/ask", methods=["POST"])
+def ask():
+    try:
+        data = request.get_json()
+        user_input = data.get("question")
+
+        if not user_input:
+            return jsonify({"error": "No question provided"}), 400
+
+        # Compute embedding for question
+        question_embedding = create_embeddings(user_input)[0]
+
+        # Find best matching disease chunks
+        new_df = search_engine.find_top_matches(question_embedding)
+
+        # Build prompt
+        prompt = f'''You are a Doctor assistant that guides the user of DiagnoScope Organization.
+Data provided is from WHO factsheets. Here are relevant disease chunks:
+
+{new_df[["disease", "heading", "text"]].to_json(orient="records")}
+------------------------------
+User asked: "{user_input}"
+
+Answer in a helpful, human way using only the provided data.
+If question is unrelated to known diseases, politely say so.'''
+
+        # Get AI response
+        response = inference(prompt)
+
+        return jsonify({"answer": response})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

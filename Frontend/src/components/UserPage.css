@@ -176,8 +176,8 @@ body {
 /* Content */
 .content {
   flex-grow: 1;
-  padding: 40px;
-  background: var(--content-bg);
-  color: var(--text-color);
-  overflow-y: auto;
+  height: 100vh;
+  overflow:auto;
+  background: none;
+  padding: 0;
 }
